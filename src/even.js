@@ -1,9 +1,8 @@
 import readlineSync from 'readline-sync';
+import HelloMan from './cli.js';
 
 const randomGame = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  const userName = HelloMan();
   console.log('Answer /"yes/" if the number is even, otherwise answer /"no/".');
   let n = 0;
   while (n !== 3) {
