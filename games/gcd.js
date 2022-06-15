@@ -1,6 +1,6 @@
 import randomNumberRange from '../src/random.js';
 
-const greatestCommonDivisor = () => {
+const gcd = () => {
   const firstNumber = randomNumberRange(1, 100);
   const secondNumber = randomNumberRange(1, 100);
   let max;
@@ -20,7 +20,7 @@ const greatestCommonDivisor = () => {
   }
   const rightAnswer = min;
   console.log(questionOut);
-  return rightAnswer;
+  return String(rightAnswer);
 };
 
-export default greatestCommonDivisor;
+export default gcd;

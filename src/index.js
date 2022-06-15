@@ -5,7 +5,7 @@ const check = (userName, answerGame) => {
   while (n !== 3) {
     const rightAnswer = answerGame();
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer == rightAnswer) {
+    if (userAnswer === rightAnswer) {
       console.log('Correct!');
       n += 1;
     } else {

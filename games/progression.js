@@ -2,14 +2,14 @@ import randomNumberRange from '../src/random.js';
 
 const progression = () => {
   const progressionArr = [];
-  const step = randomNumberRange(1, 9);
+  const stepProgression = randomNumberRange(1, 9);
   const lenProgression = randomNumberRange(5, 15);
-  let numberprogression = randomNumberRange(1, 100);
+  let numberProgression = randomNumberRange(1, 100);
   let n = 1;
-  progressionArr.push(numberprogression);
+  progressionArr.push(numberProgression);
   while (n !== lenProgression) {
-    numberprogression += step;
-    progressionArr.push(numberprogression);
+    numberProgression += stepProgression;
+    progressionArr.push(numberProgression);
     n += 1;
   }
   const hideNumber = randomNumberRange(0, lenProgression - 1);
@@ -17,6 +17,6 @@ const progression = () => {
   progressionArr[hideNumber] = '..';
   const questionOut = `Question: ${progressionArr.join(' ')}`;
   console.log(questionOut);
-  return rightAnswer;
+  return String(rightAnswer);
 };
 export default progression;

@@ -1,5 +1,6 @@
+import randomNumberRange from '../src/random.js';
+
 const calc = () => {
-  const randomNumberRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   const symbolArray = ['+', '-', '*'];
   const firstNumber = randomNumberRange(1, 100);
   const secondNumber = randomNumberRange(1, 100);
@@ -16,9 +17,11 @@ const calc = () => {
     case 2:
       rightAnswer = firstNumber * secondNumber;
       break;
+    default:
+      console.log('error');
   }
   console.log(questionOut);
-  return rightAnswer;
+  return String(rightAnswer);
 };
 
 export default calc;
