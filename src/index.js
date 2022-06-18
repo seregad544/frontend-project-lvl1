@@ -1,22 +1,25 @@
 import readlineSync from 'readline-sync';
+import helloMan from './cli.js';
 
-const check = (userName, answerGame) => {
+const startGame = (conditionsGame, getTask) => {
+  const userName = helloMan();
+  console.log(conditionsGame);
+  const amountRounds = 3;
   let n = 0;
-  while (n !== 3) {
-    const rightAnswer = answerGame();
+  while (n !== amountRounds) {
+    const rightAnswer = getTask();
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === rightAnswer) {
-      console.log('Correct!');
-      n += 1;
-    } else {
+    if (userAnswer !== rightAnswer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
+    console.log('Correct!');
+    n += 1;
   }
-  if (n === 3) {
+  if (n === amountRounds) {
     console.log(`Congratulations, ${userName}!`);
   }
 };
 
-export default check;
+export default startGame;

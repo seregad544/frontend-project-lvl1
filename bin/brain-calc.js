@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import calc from '../games/calc.js';
-import helloMan from '../src/cli.js';
-import check from '../src/index.js';
+import { calc, conditionsGame } from '../src/games/calc.js';
+import startGame from '../src/index.js';
 
-const userName = helloMan();
-console.log('What is the result of the expression?');
-check(userName, calc);
+startGame(conditionsGame, calc);
