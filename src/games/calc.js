@@ -22,6 +22,6 @@ export const calc = () => {
     default:
       break;
   }
-  console.log(`Question: ${firstNumber}${randomOperators}${secondNumber}`);
+  console.log(`Question: ${firstNumber} ${randomOperators} ${secondNumber}`);
   return rightAnswer.toString();
 };
