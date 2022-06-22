@@ -1,8 +1,14 @@
-import { getRandomNumber, isEven } from '../utils.js';
+import startGame from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-export const conditionsGame = 'Answer "yes" if the number is even, otherwise answer "no".';
-export const even = () => {
-  const randomNumber = getRandomNumber();
-  console.log(`Question: ${randomNumber}`);
-  return isEven(randomNumber) ? 'yes' : 'no';
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (number) => (number % 2 === 0);
+
+const getTask = () => {
+  const questionNumber = getRandomNumber();
+  const answer = isEven(questionNumber) ? 'yes' : 'no';
+  return [questionNumber, answer];
 };
+
+export default () => startGame(rule, getTask);

@@ -1,9 +1,23 @@
-import { getRandomNumber, isSimple } from '../utils.js';
+import startGame from '../index.js';
+import { getRandomNumber } from '../utils.js';
 
-export const conditionsGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-export const prime = () => {
-  const maxNumber = 999;
-  const randomNumber = getRandomNumber(maxNumber);
-  console.log(`Question: ${randomNumber}`);
-  return isSimple(randomNumber) ? 'yes' : 'no';
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const isPrime = (number) => {
+  const maxDivisible = Math.sqrt(number);
+  for (let i = 2; i <= maxDivisible; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
 };
+
+const maxNumber = 999;
+const getTask = () => {
+  const questionNumber = getRandomNumber(maxNumber);
+  const answer = isPrime(questionNumber) ? 'yes' : 'no';
+  return [questionNumber, answer];
+};
+
+export default () => startGame(rule, getTask);

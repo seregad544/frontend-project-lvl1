@@ -1,25 +1,30 @@
 import readlineSync from 'readline-sync';
-import helloMan from './cli.js';
+import getUserName from './cli.js';
 
-const startGame = (conditionsGame, getTask) => {
-  const userName = helloMan();
-  console.log(conditionsGame);
-  const amountRounds = 3;
-  let n = 0;
-  while (n !== amountRounds) {
-    const rightAnswer = getTask();
+const loseRound = (userAnswer, answer, userName) => {
+  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
+  console.log(`Let's try again, ${userName}!`);
+};
+
+const winRound = () => console.log('Correct!');
+
+const winGame = (userName) => console.log(`Congratulations, ${userName}!`);
+
+const amountRounds = 3;
+const startGame = (rule, getTask) => {
+  const userName = getUserName();
+  console.log(rule);
+  for (let i = 0; i < amountRounds; i += 1) {
+    const [question, answer] = getTask();
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer !== rightAnswer) {
-      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
-      console.log(`Let's try again, ${userName}!`);
-      break;
+    if (userAnswer !== answer) {
+      loseRound(userAnswer, answer, userName);
+      return;
     }
-    console.log('Correct!');
-    n += 1;
+    winRound();
   }
-  if (n === amountRounds) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  winGame(userName);
 };
 
 export default startGame;
