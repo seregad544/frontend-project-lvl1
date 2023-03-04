@@ -8,30 +8,30 @@ Brain Games is a set of five console games. Each game asks questions that need t
 
 ```sh
 make install
-brain-even
+make brain-even
 ```
 [![asciicast](https://asciinema.org/a/uPWfacnjiDXznd7rqHPdGr8Yv.svg)](https://asciinema.org/a/uPWfacnjiDXznd7rqHPdGr8Yv)
 ## Run brain-calc
 
 ```sh
-brain-calc
+make brain-calc
 ```
 [![asciicast](https://asciinema.org/a/rDiF4FZJ4lfQSDSL3DmwCnOgX.svg)](https://asciinema.org/a/rDiF4FZJ4lfQSDSL3DmwCnOgX)
 ## Run brain-gcd
 
 ```sh
-brain-gcd
+make brain-gcd
 ```
 [![asciicast](https://asciinema.org/a/6IxEieHqeRQ7Nfi8yrTOBPue1.svg)](https://asciinema.org/a/6IxEieHqeRQ7Nfi8yrTOBPue1)
 ## Run brain-progression
 
 ```sh
-brain-progression
+make brain-progression
 ```
 [![asciicast](https://asciinema.org/a/GjozGp5NAb5JWJE5gjT1BWz2I.svg)](https://asciinema.org/a/GjozGp5NAb5JWJE5gjT1BWz2I)
 ## Run brain-prime
 
 ```sh
-brain-prime
+make brain-prime
 ```
 [![asciicast](https://asciinema.org/a/RaSRZRoaK81B9sGi8LaYTo5dL.svg)](https://asciinema.org/a/RaSRZRoaK81B9sGi8LaYTo5dL)
