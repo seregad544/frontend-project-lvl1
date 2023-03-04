@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import helloMan from '../src/cli.js';
+import helloMan from '../build/cli.js';
 
 helloMan();
